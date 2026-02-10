@@ -102,105 +102,130 @@
 							manually to ensure appropriate usage and compatibility.
 						</p>
 
-                						<form
-                  method="post"
-                  action="mailto:support@simrix.org?subject=SIMRIX%20License%20Request"
-                  enctype="text/plain"
-                >
-                
-                  <div class="row gtr-uniform">
-                
-                    <!-- Applicant Name -->
-                    <div class="col-6 col-12-xsmall">
-                      <input
-                        type="text"
-                        name="Applicant Name"
-                        placeholder="Name of the applicant"
-                        required
-                      />
-                    </div>
-                
-                    <!-- License Duration -->
-                    <div class="col-6 col-12-xsmall">
-                      <input
-                        type="text"
-                        name="Requested License Duration"
-                        placeholder="Requested license validity (e.g. 3 months, 1 year)"
-                        required
-                      />
-                    </div>
-                
-                    <!-- Software Selection -->
-                    <div class="col-12">
-                      <label><strong>Requested Software(s)</strong></label>
-                      <ul style="list-style: none; padding-left: 0;">
-                        <li>
-                          <input type="checkbox" id="sw1" name="Software - Suspension Analyzer" />
-                          <label for="sw1">SIMRIX – Suspension Analyzer</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" id="sw2" name="Software - Lap Time Simulator" />
-                          <label for="sw2">SIMRIX – Lap Time Simulator</label>
-                        </li>
-                        <!-- Add more software checkboxes here -->
-                      </ul>
-                    </div>
-                
-                    <!-- Reason -->
-                    <div class="col-12">
-                      <textarea
-                        name="Reason for Request"
-                        placeholder="Reason for wanting the software(s)"
-                        rows="4"
-                        required
-                      ></textarea>
-                    </div>
-                
-                    <!-- Source -->
-                    <div class="col-6 col-12-xsmall">
-                      <input
-                        type="text"
-                        name="How did you hear about SIMRIX?"
-                        placeholder="How did you hear about SIMRIX?"
-                      />
-                    </div>
-                
-                    <!-- System Parameters -->
-                    <div class="col-6 col-12-xsmall">
-                      <input
-                        type="text"
-                        name="System Parameter File"
-                        placeholder="System parameter file name or reference"
-                      />
-                    </div>
-                
-                    <!-- Additional Comments -->
-                    <div class="col-12">
-                      <textarea
-                        name="Additional Comments"
-                        placeholder="Additional comments or custom requirements"
-                        rows="4"
-                      ></textarea>
-                    </div>
-                
-                    <!-- Submit -->
-                    <div class="col-12">
-                      <ul class="actions">
-                        <li>
-                          <input
-                            type="submit"
-                            value="Generate License Request Email"
-                            class="primary"
-                          />
-                        </li>
-                        <li>
-                          <input type="reset" value="Clear Form" />
-                        </li>
-                      </ul>
-                    </div>
-                
-                  </div>
-                </form>
+						<form
+						  method="POST"
+						  action="https://formspree.io/f/mjgegvqb"
+						>
+						  <div class="row gtr-uniform">
+						
+						    <!-- Applicant Name -->
+						    <div class="col-6 col-12-xsmall">
+						      <input
+						        type="text"
+						        name="applicant_name"
+						        placeholder="Applicant Name"
+						        required
+						      />
+						    </div>
+						
+						    <!-- Applicant Email -->
+						    <div class="col-6 col-12-xsmall">
+						      <input
+						        type="email"
+						        name="applicant_email"
+						        placeholder="Email Address"
+						        required
+						      />
+						    </div>
+						
+						    <!-- Software Selection -->
+						    <div class="col-12">
+						      <label><strong>Requested Software(s)</strong></label>
+						      <ul style="list-style: none; padding-left: 0;">
+						        <li>
+						          <input type="checkbox" name="software[]" value="Suspension Analyzer" id="sw1">
+						          <label for="sw1">SIMRIX – Suspension Analyzer</label>
+						        </li>
+						        <li>
+						          <input type="checkbox" name="software[]" value="Lap Time Simulator" id="sw2">
+						          <label for="sw2">SIMRIX – Lap Time Simulator</label>
+						        </li>
+						      </ul>
+						    </div>
+						
+						    <!-- Reason -->
+						    <div class="col-12">
+						      <textarea
+						        name="reason"
+						        placeholder="Reason for requesting the software(s)"
+						        rows="4"
+						        required
+						      ></textarea>
+						    </div>
+						
+						    <!-- License Duration -->
+						    <div class="col-6 col-12-xsmall">
+						      <input
+						        type="text"
+						        name="license_duration"
+						        placeholder="Requested license validity (e.g. 6 months)"
+						        required
+						      />
+						    </div>
+						
+						    <!-- Source -->
+						    <div class="col-6 col-12-xsmall">
+						      <input
+						        type="text"
+						        name="source"
+						        placeholder="How did you hear about SIMRIX?"
+						      />
+						    </div>
+						
+						    <!-- System Parameters -->
+						    <div class="col-12">
+						      <h4>System Identification Parameters</h4>
+						    </div>
+						
+						    <div class="col-4 col-12-xsmall">
+						      <input
+						        type="text"
+						        name="system_uuid"
+						        placeholder="System UUID"
+						        required
+						      />
+						    </div>
+						
+						    <div class="col-4 col-12-xsmall">
+						      <input
+						        type="text"
+						        name="motherboard_serial"
+						        placeholder="Motherboard Serial Number"
+						        required
+						      />
+						    </div>
+						
+						    <div class="col-4 col-12-xsmall">
+						      <input
+						        type="text"
+						        name="cpu_serial"
+						        placeholder="CPU Serial Number"
+						        required
+						      />
+						    </div>
+						
+						    <!-- Additional Comments -->
+						    <div class="col-12">
+						      <textarea
+						        name="additional_comments"
+						        placeholder="Additional comments or custom requirements"
+						        rows="4"
+						      ></textarea>
+						    </div>
+						
+						    <!-- Submit -->
+						    <div class="col-12">
+						      <ul class="actions">
+						        <li>
+						          <button type="submit" class="primary">
+						            Submit License Request
+						          </button>
+						        </li>
+						      </ul>
+						    </div>
+						
+						  </div>
+						</form>
 
 						<hr />
 
@@ -211,6 +236,7 @@
 							<li>Modifying system parameters may invalidate an existing license.</li>
 							<li>License approval time may vary depending on request complexity.</li>
 							<li>Providing incomplete or incorrect information may delay processing.</li>
+							<li>System identification data is used solely for license generation and is stored securely. No hardware identifiers are shared with third parties.</li>
 						</ul>
 
 					</div>
